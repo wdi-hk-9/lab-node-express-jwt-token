@@ -38,4 +38,12 @@ AgentSchema.pre('save', function(next) {
   next();
 });
 
+AgentSchema.methods.authenticate = function(name, callback) {
+  // Compare is a bcrypt method that will return a boolean,
+  // if the first argument once encrypted corresponds to the second argument
+  bcrypt.compare(name, this.name, function(err, isMatch) {
+    callback(null, isMatch);
+  });
+};
+
 module.exports = mongoose.model('Agent', AgentSchema);
