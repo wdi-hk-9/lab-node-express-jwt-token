@@ -1,0 +1,11 @@
+curl -X POST -i -H "Content-Type: application/json" -d '{
+  "name": "James Bond",
+  "codename": "007"
+}' http://localhost:3000/api/authorizations
+
+curl -X POST -i -H "Content-Type: application/json" -d '{
+  "name": "James Bond",
+  "codename": "007"
+}' http://localhost:3000/api/agents
+
+curl http://localhost:3000/api/agents
