@@ -23,7 +23,7 @@ function createAgent(request,response){
 function getAgent(request, response){
   var id = request.params.id;
 
-  Agent.findById({_id: id}, function(error, agent){
+  Agent.find({codename: id}, function(error, agent){
     if (error) response.json({message: 'You seem to be mistaken, we have no agent with that identity.'});
 
     response.json({agent: agent});
